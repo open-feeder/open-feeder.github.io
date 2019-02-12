@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <title>open-feeder</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-sm">
+          <h1>open-feeder</h1>
+          <p class="mt-5">
+            open-feeder is a public service. Endlessly, it subscribes to all RSS/Atom feeds throughout the internet. It parses, archives and serves the contents, and notifies the world with the updating.
+          </p>
+          <p class="mt-4 mb-5">
+            It works for blogs, podcasts, video channels and so on. Use it for any purpose as you like, your private reader app, scripts on your NAS, internal tools for work, etc.
+          </p>
+        </div>
+      </div>
+
+      <dl class="row mt-3">
+        <dt class="col-sm-3">free and open</dt>
+        <dd class="col-sm-9">
+          <p>Free for all. No authentication. Open-sourced and self-hostable.</p>
+        </dd>
+
+        <dt class="col-sm-3">simple yet powerful</dt>
+        <dd class="col-sm-9">
+          <p>A dead simple RESTful API.</p>
+          <p>Hooks to notify updates.</p>
+        </dd>
+
+        <!--
+        <dt class="col-sm-3">sister projects</dt>
+        <dd class="col-sm-9">
+          <p>open-reader</p>
+          <p>open-reading-mode: ML powered article reading-mode parser.</p>
+        </dd>
+        -->
+
+      </dl>
+
+      <hr>
+
+      <div class="row mt-5">
+        <h2 class="col-sm-3">have a try</h2>
+      </div>
+
+      <dl class="row mt-3">
+        <dt class="col-sm-3">add a feed</dt>
+        <dd class="col-sm-9">
+<pre><code class="shell">$ curl https://api.open-feeder.com/feeds \
+  -d url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"</code></pre>
+        </dd>
+
+        <dt class="col-sm-3">fetch entries</dt>
+        <dd class="col-sm-9">
+<pre><code class="shell">$ curl https://api.open-feeder.com/entries?feed_url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+</code></pre>
+        </dd>
+
+        <!-- <dt class="col-sm-3">add a hook</dt>
+        <dd class="col-sm-9">
+<pre><code class="shell">$ curl https://api.open-feeder.com/hooks \
+  -d feed_url="https://news.un.org/feed/subscribe/en/news/all/rss.xml" \
+  -d endpoint="https://your.site/endpoint" \
+  -d signature="[some-secret-token-here]"</code></pre>
+        </dd> -->
+      </dl>
+
+      <hr>
+
+      <div class="row mt-5">
+        <h2 class="col-sm-3">meta</h2>
+      </div>
+  
+      <dl class="row my-3">
+        <dt class="col-sm-3 text-right">feeds</dt>
+        <dd class="col-sm-9">
+          <p><span id="meta-feeds-amount">[loading]</span></p>
+        </dd>
+
+        <dt class="col-sm-3 text-right">entires</dt>
+        <dd class="col-sm-9">
+          <p><span id="meta-entries-amount">[loading]</span></p>
+        </dd>
+
+        <dt class="col-sm-3 text-right">daily requests</dt>
+        <dd class="col-sm-9">
+          <p><span id="meta-daily-requests">[loading]</span></p>
+        </dd>
+      </dl>
+
+      <hr>
+
+      <div class="row mt-5">
+        <h2 class="col-sm-3">help us!</h2>
+      </div>
+      <div class="row my-3">
+        <p class="col-sm-12">
+          open-feeder relies on your donations to operate and maintance, and to remain free and neutral.
+        </p>
+        <ul class="list-inline col-sm-12">
+          <li class="list-inline-item">
+            <a href="#" target="_blank">[DONATION LINK]</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" target="_blank">financial-reports</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div class="row mt-5">
+        <h2 class="col-sm-3">additional info</h2>
+      </div>
+
+      <div class="row my-3">
+        <ul class="list-inline col-sm-12">
+          <li class="list-inline-item">
+            <a href="https://docs.open-feeder.com" target="_blank">API Docs</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/open-feeder" target="_blank">Source and repos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+      $(async function(){
+        meta = await fetch('https://open-feeder.herokuapp.com/meta')
+        debugger
+      })
+    </script>
+  </body>
+</html>
