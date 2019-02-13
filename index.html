@@ -95,10 +95,10 @@
           <p><span id="meta-feeds-amount">[loading]</span></p>
         </dd>
 
-        <!-- <dt class="col-sm-3 text-right">latest added feed</dt>
+        <dt class="col-sm-3 text-right">latest added feed</dt>
         <dd class="col-sm-9">
-          <p><span id="meta-feeds-amount">[loading]</span></p>
-        </dd> -->
+          <p><span id="meta-latest-feed">[loading]</span></p>
+        </dd>
 
         <dt class="col-sm-3 text-right">entires</dt>
         <dd class="col-sm-9">
@@ -158,7 +158,10 @@
       $(async function(){
         let meta = await fetch('https://api.open-feeder.org/meta')
         meta = await meta.json()
-        console.log(meta)
+
+        document.querySelector('#meta-feeds-amount').innerText = meta.feeds_amount
+        document.querySelector('#meta-latest-feed').innerText = meta.latest_added_feed
+        document.querySelector('#meta-entries-amount').innerText = meta.entries_amount
       })
     </script>
   </body>
