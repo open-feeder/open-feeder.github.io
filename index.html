@@ -57,26 +57,25 @@
       <dl class="row mt-3">
         <dt class="col-sm-3">check if a feed exists</dt>
         <dd class="col-sm-9">
-<pre><code class="shell">$ curl https://api.open-feeder.com/feeds\
-  ?url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+<pre><code class="shell">$ curl https://api.open-feeder.org/feeds?url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
 </code></pre>
         </dd>
 
-        <dt class="col-sm-3">add a feed</dt>
+        <dt class="col-sm-3">add one if doesn't exist</dt>
         <dd class="col-sm-9">
-<pre><code class="shell">$ curl https://api.open-feeder.com/feeds \
+<pre><code class="shell">$ curl https://api.open-feeder.org/feeds \
   -d url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"</code></pre>
         </dd>
 
-        <dt class="col-sm-3">fetch entries</dt>
+        <!-- <dt class="col-sm-3">fetch entries</dt>
         <dd class="col-sm-9">
-<pre><code class="shell">$ curl https://api.open-feeder.com/entries?feed_url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+<pre><code class="shell">$ curl https://api.open-feeder.org/entries?feed_url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
 </code></pre>
-        </dd>
+        </dd> -->
 
-        <!-- <dt class="col-sm-3">add a hook</dt>
+        <!-- <dt class="col-sm-3">add a hook to receive updates</dt>
         <dd class="col-sm-9">
-<pre><code class="shell">$ curl https://api.open-feeder.com/hooks \
+<pre><code class="shell">$ curl https://api.open-feeder.org/hooks \
   -d feed_url="https://news.un.org/feed/subscribe/en/news/all/rss.xml" \
   -d endpoint="https://your.site/endpoint" \
   -d signature="[some-secret-token-here]"</code></pre>
@@ -139,7 +138,7 @@
       <div class="row mt-3 mb-5">
         <ul class="list-inline col-sm-12">
           <!-- <li class="list-inline-item">
-            <a href="https://docs.open-feeder.com" target="_blank">API Docs</a>
+            <a href="https://docs.open-feeder.org" target="_blank">API Docs</a>
           </li> -->
           <li class="list-inline-item">
             <a href="https://github.com/open-feeder" target="_blank">Source and repos</a>
