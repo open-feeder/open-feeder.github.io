@@ -157,7 +157,7 @@
     <script>
       $(async function(){
         let meta = await fetch('https://api.open-feeder.org/meta')
-        let meta = await meta.json()
+        meta = await meta.json()
         console.log(meta)
       })
     </script>
