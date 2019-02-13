@@ -16,11 +16,12 @@
       <div class="row mt-5">
         <div class="col-sm">
           <h1>open-feeder</h1>
+          <h4 class="mt-5">don't write a cron job to refresh feeds.</h4>
           <p class="mt-5">
-            open-feeder is a public service. Endlessly, it subscribes to all RSS/Atom feeds throughout the internet. It parses, archives and serves the contents, and notifies the world with the updating.
+            <strong>open-feeder</strong> is a public service. It subscribes to all RSS/Atom feeds throughout the internet. It constantly parses, archives and serves the contents, and notifies the world with the updating.
           </p>
           <p class="mt-4 mb-5">
-            It works for blogs, podcasts, video channels and so on. Use it for any purpose as you like, your private reader app, scripts on your NAS, internal tools for work, etc.
+            News, blogs, podcasts, video channels and so on, feeds are the future of a free and open internet.
           </p>
         </div>
       </div>
@@ -50,10 +51,17 @@
       <hr>
 
       <div class="row mt-5">
-        <h2 class="col-sm-3">have a try</h2>
+        <h2 class="col-sm-3">try it</h2>
       </div>
 
       <dl class="row mt-3">
+        <dt class="col-sm-3">check if a feed exists</dt>
+        <dd class="col-sm-9">
+<pre><code class="shell">$ curl https://api.open-feeder.com/feeds\
+  ?url="https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+</code></pre>
+        </dd>
+
         <dt class="col-sm-3">add a feed</dt>
         <dd class="col-sm-9">
 <pre><code class="shell">$ curl https://api.open-feeder.com/feeds \
@@ -78,7 +86,7 @@
       <hr>
 
       <div class="row mt-5">
-        <h2 class="col-sm-3">meta</h2>
+        <h2 class="col-sm-3">status</h2>
       </div>
   
       <dl class="row my-3">
@@ -87,15 +95,20 @@
           <p><span id="meta-feeds-amount">[loading]</span></p>
         </dd>
 
+        <!-- <dt class="col-sm-3 text-right">latest added feed</dt>
+        <dd class="col-sm-9">
+          <p><span id="meta-feeds-amount">[loading]</span></p>
+        </dd> -->
+
         <dt class="col-sm-3 text-right">entires</dt>
         <dd class="col-sm-9">
           <p><span id="meta-entries-amount">[loading]</span></p>
         </dd>
 
-        <dt class="col-sm-3 text-right">daily requests</dt>
+        <!-- <dt class="col-sm-3 text-right">daily requests</dt>
         <dd class="col-sm-9">
           <p><span id="meta-daily-requests">[loading]</span></p>
-        </dd>
+        </dd> -->
       </dl>
 
       <hr>
@@ -105,7 +118,7 @@
       </div>
       <div class="row my-3">
         <p class="col-sm-12">
-          open-feeder relies on your donations to operate and maintance, and to remain free and neutral.
+          open-feeder relies on your donations to operate, and to remain free and neutral.
         </p>
         <ul class="list-inline col-sm-12">
           <li class="list-inline-item">
@@ -123,11 +136,11 @@
         <h2 class="col-sm-3">additional info</h2>
       </div>
 
-      <div class="row my-3">
+      <div class="row mt-3 mb-5">
         <ul class="list-inline col-sm-12">
-          <li class="list-inline-item">
+          <!-- <li class="list-inline-item">
             <a href="https://docs.open-feeder.com" target="_blank">API Docs</a>
-          </li>
+          </li> -->
           <li class="list-inline-item">
             <a href="https://github.com/open-feeder" target="_blank">Source and repos</a>
           </li>
@@ -143,8 +156,7 @@
 
     <script>
       $(async function(){
-        meta = await fetch('https://open-feeder.herokuapp.com/meta')
-        debugger
+        meta = await fetch('https://api.open-feeder.org/meta')
       })
     </script>
   </body>
